@@ -1,0 +1,6 @@
+{
+  "chatgpt.commentCodeLensEnabled": false,
+  "chatgpt.openOnStartup": false,
+  "editor.inlineSuggest.enabled": false,
+  "editor.inlineSuggest.edits.enabled": false
+}

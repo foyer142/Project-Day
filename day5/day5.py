@@ -3,8 +3,8 @@ def normalize_text(text: str) -> str:
     return  text.strip().title()
 
 def split_sentences(text: str) -> list[str]:
-    text.strip().split('.').remove('')
-    return text
+    sentences = text.split('.')
+    return [sentence.strip() for sentence in sentences if sentence.strip()] 
 
 def count_characters_without_spaces(text: str) -> int:
     cnt = 0
@@ -14,9 +14,7 @@ def count_characters_without_spaces(text: str) -> int:
     return cnt
 
 def build_full_name(first_name: str, last_name: str) -> str:
-    normalize_text(first_name)
-    normalize_text(last_name )
-    return first_name + ' ' + last_name
+    return normalize_text(first_name) + ' ' + normalize_text(last_name)
 
 users = [
     {"name": "  bulat  ", "age": 20, "city": "Tomsk"},
@@ -32,5 +30,6 @@ print(split_sentences(text))
 
 print(count_characters_without_spaces(text))
 
-print(build_full_name("Ivan", "Petrov"))
+print(build_full_name(" ivan", "Petrov"))
+
 
