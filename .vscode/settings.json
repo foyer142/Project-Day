@@ -1,0 +1,19 @@
+{
+    "python-envs.defaultEnvManager": "ms-python.python:system",
+    "chatgpt.commentCodeLensEnabled": false,
+    "chatgpt.openOnStartup": false,
+    "editor.inlineSuggest.enabled": false,
+    "editor.inlineSuggest.edits.enabled": false,
+    "editor.quickSuggestions": {
+        "other": false,
+        "comments": false,
+        "strings": false
+    },
+    "editor.suggestOnTriggerCharacters": false,
+    "editor.parameterHints.enabled": false,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.tabCompletion": "off",
+    "editor.wordBasedSuggestions": "off",
+    "python.analysis.autoImportCompletions": false,
+    "python.analysis.completeFunctionParens": false
+}
