@@ -45,7 +45,7 @@ users = [
     {"name": "Anna", "age": 17, "city": "Moscow", "skills": ["HTML", "CSS"]},
     {"name": "Ivan", "age": 22, "city": "Tomsk", "skills": ["FastAPI", "PostgreSQL"]},
     {"name": "Mira", "age": 19, "city": "Kazan", "skills": ["Python", "Docker"]},
-    {"name": "Dias", "age": 19, "city": "Ust-Kamenogorsk", "skills": ["Python", "Java"]},
+    {"name": "Dias", "age": 19, "city": "Ust-Kamenogorsk", "skills": ["Python", "Java","Daun"]},
 ]
 
 
