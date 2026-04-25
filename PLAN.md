@@ -1,7 +1,7 @@
 # Менторская программа на 5–6 месяцев: Junior AI Backend
 
 ## Summary
-Я беру роль ментора по треку `Python -> FastAPI -> PostgreSQL -> SQLAlchemy -> Alembic -> Redis -> Docker -> OpenAI API -> RAG -> pgvector -> production basics`.
+Я беру роль ментора по треку `Python -> FastAPI -> WebSocket/SSE -> PostgreSQL -> SQLAlchemy -> Alembic -> Redis -> Docker -> OpenAI API -> RAG -> pgvector -> production basics`.
 
 Формат работы:
 - Темп: `15–20 часов в неделю`
@@ -72,15 +72,23 @@
 
 Что проходим:
 - HTTP, REST, JSON, статус-коды
+- REST APIs и JSON APIs как основной формат backend-интерфейсов
 - FastAPI, роуты, Pydantic, валидация
 - структура backend-проекта
 - конфиги, `.env`, ошибки, middleware basics
 - auth basics, JWT на базовом уровне
+- Basic Authentication, Token Authentication, Cookie Based Auth
+- OAuth basics и отличие OAuth от обычной token auth
+- WebSocket basics для real-time сценариев
+- SSE basics для stream-ответов и событий сервера
 
 Практика:
 - CRUD API
 - валидация входящих данных
 - фильтры, пагинация, схемы ответа
+- auth-практика: JWT, cookies, bearer token, basic auth
+- простой WebSocket endpoint
+- простой SSE endpoint для потоковой отдачи событий
 
 Результат:
 - первый полноценный backend-сервис на FastAPI
@@ -94,12 +102,18 @@
 - PostgreSQL как рабочая БД
 - SQLAlchemy ORM/Core basics
 - связи моделей
+- transactions: commit, rollback, atomic operations
 - Alembic migrations
+- database indexes и базовая оптимизация запросов
+- scaling databases: read replicas, connection pooling, partitioning basics
 - репозиторный и сервисный слой на базовом уровне
 
 Практика:
 - перенос CRUD API на PostgreSQL
 - создание схем, миграций, связей
+- миграции схемы через Alembic в реальном проекте
+- транзакции для нескольких связанных операций
+- добавление индексов и проверка эффекта через `EXPLAIN`
 - несколько реальных запросов и фильтров
 
 Результат:
@@ -111,16 +125,31 @@
 
 Что проходим:
 - Redis как cache
+- Redis как broker для Celery
 - TTL, кеширование, типовые сценарии
+- Celery workers для фоновых и параллельных задач
+- retries, task status и базовая устойчивость задач
+- RabbitMQ basics: exchanges, queues, routing keys, producers, consumers
+- message-driven подход и отличие RabbitMQ от Celery/Redis task queue
 - фоновые задачи и базовая оркестрация worker-процессов
+- WebSocket + Redis pub/sub для live-уведомлений
+- SSE для прогресса фоновых задач, логов и AI streaming
 - Docker, Docker Compose
+- Nginx basics: reverse proxy, static files, upstream services
 - локальный запуск нескольких сервисов вместе
 
 Практика:
 - API + PostgreSQL + Redis
 - кэширование ответов
+- Celery + Redis для параллельных задач
+- RabbitMQ producer/consumer для событий приложения
+- простой message pipeline через RabbitMQ
 - фоновые задачи на отправку/обработку
+- task status endpoint для отслеживания задач
+- real-time notifications через WebSocket
+- progress updates через SSE
 - упаковка всего в Docker Compose
+- Nginx reverse proxy перед API
 
 Результат:
 - полноценный сервис из нескольких компонентов
@@ -154,6 +183,12 @@
 - тесты: unit/integration/API
 - логирование, мониторинг basics
 - ошибки, устойчивость, безопасность basics
+- architectural patterns: layered architecture, clean/service/repository подход
+- monolithic apps и когда монолит лучше микросервисов
+- microservices basics и риски преждевременного разбиения
+- GitHub Actions CI/CD: workflows, jobs, runners
+- CI для тестов, линтинга и проверки форматирования
+- CD basics: Docker build, registry, deploy pipeline
 - README, архитектурное описание, демо
 - разбор собеседовательных вопросов
 - портфолио, резюме, позиционирование
@@ -161,6 +196,10 @@
 Практика:
 - доведение главного проекта
 - полировка структуры репозитория
+- архитектурная схема проекта: API, DB, cache, workers, queue, proxy
+- сравнение monolith vs microservices на своем проекте
+- настройка `.github/workflows/ci.yml`
+- pipeline для тестов, сборки Docker image и базового деплоя
 - подготовка легенды проекта: что сделал, какие проблемы решал, почему так спроектировал
 
 Результат:
