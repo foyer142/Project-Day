@@ -1,0 +1,21 @@
+
+[
+  {
+    "name": "Bulat",
+    "age": 20,
+    "city": "Tomsk",
+    "is_active": true
+  },
+  {
+    "name": "Anna",
+    "age": 17,
+    "city": "Moscow",
+    "is_active": true
+  },
+  {
+    "name": "Ivan",
+    "age": 24,
+    "city": "Tomsk",
+    "is_active": false
+  }
+]
