@@ -5,7 +5,7 @@ def print_menu() -> None:
 
 
 def input_user_data() -> dict:
-    not_done = True
+    not_done = True 
     while not_done:
         user_data = {}
         try:
@@ -25,7 +25,7 @@ def input_user_data() -> dict:
                 not_done = True
                 print('Поля не должны быть пустыми...')
         except ValueError:
-            print('Неправильный тип введенных данных...')
+            print('Неправильный тип введенных данных... ')
         
 
     return ({
