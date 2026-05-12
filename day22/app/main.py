@@ -1,14 +1,19 @@
-from cli import input_user_data, print_menu, print_user, print_users
+from cli import input_user_data, print_menu, print_user, print_users,print_error_validation
 from storage import load_users, save_users
-from user_service import UserService
+from service import UserService
+from validator import UserValidator
+from pathlib import Path
 
 
-FILENAME = "users.json"
+BASE_DIR = Path(__file__).resolve().parent.parent
+FILENAME = BASE_DIR / "data" / "users.json"
+
 
 
 def main() -> None:
     users = load_users(FILENAME)
     service = UserService(users)
+    
 
     while True:
         print_menu()
@@ -16,14 +21,20 @@ def main() -> None:
 
         if choice == "1":
             data = input_user_data()
-            service.add_user(
-                data["name"],
-                data["age"],
-                data["city"],
-                data["email"],
-            )
-            save_users(FILENAME, service.get_all_users())
-            print("User added and saved")
+            validator = UserValidator(data)
+            
+
+            if validator.validate_user_data():
+                service.add_user(
+                    data["name"],
+                    data["age"],
+                    data["city"],
+                    data["email"],
+                )
+                save_users(FILENAME, service.get_all_users())
+                print("User added and saved")
+            else:
+                print_error_validation(validator.errors)
 
         elif choice == "2":
             print_users(service.get_all_users())

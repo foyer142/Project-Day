@@ -13,7 +13,7 @@ You need change directory on "day21" and launch python file this command: 'pytho
 4. find user by email
 5. save users
 6. delete user by email
-7. exit from program
+0. exit from program
 
 ## Structure files
 day21/
